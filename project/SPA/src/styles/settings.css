@@ -1,0 +1,40 @@
+.card.card-break {
+    border-color: #1B1F24;
+    border-radius: 8px;
+    border-width: 2px;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.8);
+    background-color: #212529;
+    color: #fff;
+}
+
+.card.card-break:hover {
+    border-color: #4d5053;
+}
+
+.card-break.selected {
+    border-color: #4d5053;
+    background-color: #373A3E;
+}
+
+.card-break .break-icon {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.card-break .break-icon img {
+    width: 100%;
+}
+
+/* CSS cho thẻ Lab Time */
+.card.card-break .form-control[type="time"] {
+    background-color: #212529;
+    color: #fff;
+    border: 1px solid #4d5053;
+    border-radius: 4px;
+}
+
+/* CSS khi thẻ Lab Time được chọn */
+.card-break.selected .form-control[type="time"] {
+    background-color: #373A3E;
+    border-color: #4d5053;
+}
