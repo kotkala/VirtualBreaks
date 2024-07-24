@@ -109,7 +109,7 @@ Contributions are welcome! Please follow these steps:
 5. Create a pull request.
 
 ## License
-This project is licensed under the MIT License by Kim Long Tram.
+This project is licensed under the MIT License by Kim Long Tram Kieu Oanh Thi Phan.
 
 ---
 t specifics, such as adding actual paths to the screenshots and any additional instructions or sections that might be necessary.
