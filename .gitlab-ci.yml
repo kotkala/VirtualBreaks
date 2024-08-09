@@ -1,0 +1,41 @@
+image: node:14
+
+stages:
+  - test
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+test:
+  stage: test
+  script:
+    - npm run test -- --watchAll=false
+  artifacts:
+    when: always
+    reports:
+      junit: junit.xml
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+
+deploy:
+  stage: deploy
+  script:
+    - apt-get update -y
+    - apt-get install -y python3-pip
+    - pip3 install azure-cli
+    - az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
+    - az storage blob upload-batch -d $AZURE_BLOB_CONTAINER_NAME -s build --account-name $AZURE_STORAGE_ACCOUNT_NAME
+  only:
+    - master
